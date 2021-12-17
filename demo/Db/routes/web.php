@@ -19,9 +19,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::prefix('author')->group(function (){
-//    Route::get('/',[AuthorController::class,"index"])->name("authors.index");
-//    Route::get('/create',[AuthorController::class,"showFormCreate"])->name("author.showFormCreate");
-//    Route::post('/create',[AuthorController::class,"create"]);
-//    Route::get('/{id}/detail',[AuthorController::class,"show"])->name("authors.show");
-//});
+
+route::prefix("authors")->group(function (){
+    Route::get('/', [AuthorController::class,"index"])->name("authors.index");
+    Route::get('/create', [AuthorController::class,"showFormCreate"])->name("authors.showFormCreate");
+    Route::post('/create',[AuthorController::class,"create"])->middleware("CheckName");
+    Route::get('/{id}/detail',[AuthorController::class,"show"])->name("authors.show");
+    Route::get('/{id}/delete',[AuthorController::class,"delete"])->name("authors.delete");
+    Route::get('/{id}/update',[AuthorController::class,"edit"])->name("authors.edit");
+    Route::post('/{id}/update',[AuthorController::class,"update"])->name("authors.update");
+});
+
+
+
+
+

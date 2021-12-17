@@ -8,15 +8,16 @@
     <title></title>
 </head>
 <body>
-<a href="{{ route("author.showFormCreate") }}">add new</a>
+
+<a href="{{route("authors.showFormCreate")}}">ADD</a>
 <table border="1px">
 
-        <tr>
-            <th>ID</th>
-            <th>name</th>
-            <th>phone</th>
-            <th colspan="3">Action</th>
-        </tr>
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>phone</th>
+        <th colspan="3">Action</th>
+    </tr>
 
     <tbody>
     @foreach($authors as $author)
@@ -24,7 +25,9 @@
             <td>{{ $author->id }}</td>
             <td>{{ $author->name }}</td>
             <td>{{ $author->phone }}</td>
-            <td><a href="{{ route("author.show", $author->id) }}">Delail</a></td>
+            <td> <a href="{{route("authors.show", $author->id)}}">Detail</a></td>
+            <td> <a href="{{route("authors.delete", $author->id)}}">Delete</a></td>
+            <td> <a href="{{route("authors.update", $author->id)}}">update</a></td>
         </tr>
     @endforeach
     </tbody>

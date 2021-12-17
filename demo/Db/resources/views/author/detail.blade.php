@@ -1,4 +1,4 @@
-<a href="{{ route("author.index") }}">Back</a>
+<a href="{{ route("authors.index") }}">Back</a>
 <table border="1px">
     <theard>
         <tr>
@@ -15,3 +15,6 @@
     </tr>
     </tbody>
 </table>
+{{--{{dd($author)}}--}}
+{{--<h1>{{$author->name}}</h1>--}}
+{{--<p>{{$author->phone}}</p>--}}
