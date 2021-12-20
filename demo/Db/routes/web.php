@@ -16,14 +16,14 @@ use Symfony\Component\HttpFoundation\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('backend.home');
 });
 
 
 route::prefix("authors")->group(function (){
     Route::get('/', [AuthorController::class,"index"])->name("authors.index");
     Route::get('/create', [AuthorController::class,"showFormCreate"])->name("authors.showFormCreate");
-    Route::post('/create',[AuthorController::class,"create"])->middleware("CheckName");
+    Route::post('/create',[AuthorController::class,"create"])->name("authors.create")->middleware("CheckName");
     Route::get('/{id}/detail',[AuthorController::class,"show"])->name("authors.show");
     Route::get('/{id}/delete',[AuthorController::class,"delete"])->name("authors.delete");
     Route::get('/{id}/update',[AuthorController::class,"edit"])->name("authors.edit");

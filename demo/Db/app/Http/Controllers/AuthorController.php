@@ -20,13 +20,13 @@ class AuthorController extends Controller
     {
         $authors = $this->authorRepository->getALl();
 //        dd($authors);
-        return view("author.list" , compact("authors"));
+        return view("backend.author.list" , compact("authors"));
     }
 
 
     public function showFormCreate()
     {
-        return view("author.create");
+        return view("backend.author.create");
     }
 
 
@@ -40,7 +40,7 @@ class AuthorController extends Controller
     public function show($id)
     {
         $author =  $this->authorRepository->getById($id);
-        return view( "author.detail",compact("author"));
+        return view( "backend.author.detail",compact("author"));
     }
 
     public function delete($id)
@@ -52,7 +52,7 @@ class AuthorController extends Controller
     public function edit($id)
     {
         $author = DB::table('authors')->where('id', '=',$id)->get()->first();
-        return view ( "author.update",compact("author"));
+        return view ( "backend.author.update",compact("author"));
     }
 
     public function update($id, Request $request)
