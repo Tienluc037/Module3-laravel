@@ -8,13 +8,17 @@
     <title>Document</title>
 </head>
 <body>
+
+<a href="{{route("posts.create")}}">Tạo bài viết</a>
 <table border="1px">
     <thead>
     <tr>
         <th>ID</th>
         <th>Title</th>
         <th>Content</th>
+        <th>Category</th>
         <th>User</th>
+        <th colspan="2">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -23,7 +27,18 @@
             <td>{{$post->id}}</td>
             <td>{{$post->title}}</td>
             <td>{{$post->content}}</td>
-            <td>{{$post->User_id}}</td>
+            <td>
+                @if(count($post->categories) > 0)
+                    @foreach($post->categories as $category)
+                        <p>{{$category->name}}</p>
+                    @endforeach
+                @else
+                    <p>Chưa phân loại</p>
+                @endif
+            </td>
+            <td>{{$post->User->name}}</td>
+            <td><a href="{{route("posts.edit",$post->id)}}">Update</a></td>
+            <td><a href="{{route("posts.destroy",$post->id)}}">Delete</a></td>
         </tr>
     @endforeach
     </tbody>
