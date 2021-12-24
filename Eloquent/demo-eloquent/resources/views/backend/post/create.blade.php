@@ -8,11 +8,24 @@
     <title>Document</title>
 </head>
 <body>
+
+{{--@if ($errors->any())--}}
+{{--    {{dd($errors)}}--}}
+{{--@endif--}}
 <form action="" method="post">
     @csrf
     <input type="text" name="title" placeholder="Tiêu đề">
+    @error('title')
+    <p style="color: red">{{($message)}}</p>
+    @enderror
     <input type="text" name="content" placeholder="Nội dung">
-    <input type="text" name="user_id" placeholder="User ID" value="1">
+    @error('content')
+    <p style="color: red">{{($message)}}</p>
+    @enderror
+    <input type="text" name="user_id" placeholder="User ID">
+    @error('user_id')
+    <p style="color: red">{{($message)}}</p>
+    @enderror
     <hr>
     <h4>Thể loại:</h4>
     @foreach($categories as $category)

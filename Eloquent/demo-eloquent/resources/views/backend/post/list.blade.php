@@ -36,7 +36,6 @@
                     <p>Chưa phân loại</p>
                 @endif
             </td>
-            <td>{{$post->User->name}}</td>
             <td><a href="{{route("posts.edit",$post->id)}}">Update</a></td>
             <td><a href="{{route("posts.destroy",$post->id)}}">Delete</a></td>
         </tr>

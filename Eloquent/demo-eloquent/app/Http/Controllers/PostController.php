@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Repositories\CategoryRepository;
 use App\Http\Repositories\PostRepository;
+use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -35,8 +36,9 @@ class PostController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
+
         $data = $request->only("title", "content","user_id");
         $post = Post::create($data);
         $post->categories()->attach($request->category);
