@@ -12,7 +12,11 @@
     @csrf
     <input type="text" name="title" placeholder="Tiêu đề" value="{{$post->title}}">
     <input type="text" name="content" placeholder="Nội dung" value="{{$post->content}}">
-    <input type="text" name="user_id" placeholder="User ID" value="{{$post->user_id}}">
+    <select name="user_id">
+        @foreach(\App\Models\User::all() as $user)
+            <option value="{{$user->id}}">{{$user->name}}</option>
+        @endforeach
+    </select>
     <hr>
     <h4>Thể loại:</h4>
 

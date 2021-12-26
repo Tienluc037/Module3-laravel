@@ -42,6 +42,8 @@ class PostController extends Controller
         $data = $request->only("title", "content","user_id");
         $post = Post::create($data);
         $post->categories()->attach($request->category);
+        toastr()->success('create Successfully');
+
         return redirect()->route("posts.index");
     }
 

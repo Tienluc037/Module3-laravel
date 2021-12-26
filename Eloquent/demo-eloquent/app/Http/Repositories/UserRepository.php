@@ -17,6 +17,11 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         $this->model->create($data);
     }
 
+    public function update($id,$request)
+    {
+        $data = $request->only("name","email","password");
+        User::findOrFail($id)->update($data);    }
+
     public function getPostOfUser($userId)
     {
         $user = $this->getById($userId);

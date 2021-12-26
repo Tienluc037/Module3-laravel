@@ -1,5 +1,4 @@
-{{--{{dd($users)}}--}}
-    <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,13 +8,16 @@
     <title>Document</title>
 </head>
 <body>
+<a href="{{route("register")}}">Tạo tài khoản</a><br>
+<button><a href="{{route("login")}}">Đăng xuất</a></button>
+<button><a href="{{route("posts.index")}}">Bài viết</a></button>
 <table border="1px">
     <thead>
     <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
-        <th>Action</th>
+        <th colspan="2">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -24,6 +26,8 @@
             <td>{{$user->id}}</td>
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
+            <td><a href="{{route("users.update",$user->id)}}">Update</a></td>
+            <td><a onclick="return confirm('Bạn có muốn xóa?')" href="{{route("users.destroy",$user->id)}}">Delete</a></td>
         </tr>
     @endforeach
     </tbody>

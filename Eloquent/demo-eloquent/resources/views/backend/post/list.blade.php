@@ -6,10 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    {{--    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">--}}
+    @toastr_css
 </head>
 <body>
-
-<a href="{{route("posts.create")}}">Tạo bài viết</a>
+<button><a href="{{route("users.index")}}">Người dùng</a></button>
+<br>
+<br>
+<button><a href="{{route("posts.create")}}">Tạo bài viết</a></button>
 <table border="1px">
     <thead>
     <tr>
@@ -27,6 +31,7 @@
             <td>{{$post->id}}</td>
             <td>{{$post->title}}</td>
             <td>{{$post->content}}</td>
+
             <td>
                 @if(count($post->categories) > 0)
                     @foreach($post->categories as $category)
@@ -36,6 +41,7 @@
                     <p>Chưa phân loại</p>
                 @endif
             </td>
+            <td>{{$post->user->name}}</td>
             <td><a href="{{route("posts.edit",$post->id)}}">Update</a></td>
             <td><a href="{{route("posts.destroy",$post->id)}}">Delete</a></td>
         </tr>
@@ -43,4 +49,7 @@
     </tbody>
 </table>
 </body>
+@jquery
+@toastr_js
+@toastr_render
 </html>
