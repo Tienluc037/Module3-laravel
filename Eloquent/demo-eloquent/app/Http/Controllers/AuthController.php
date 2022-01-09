@@ -17,9 +17,11 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+//        dd($request);
         $data = $request->only("email","password");
         if(Auth::attempt($data))
         {
+            toastr()->success('Xin chào '. Auth::user()->name);
             return redirect()->route("posts.index");
         } else {
             dd("Sai tên đăng nhập hoặc mật khẩu");
@@ -28,9 +30,9 @@ class AuthController extends Controller
 
     public function logout()
     {
-        Session::flush();
+//        session()->flush();
         Auth::logout();
-        return redirect()->route("login");
+        return redirect()->route("login.showFormLogin");
     }
 
 
@@ -44,7 +46,7 @@ class AuthController extends Controller
         $data = $request->only("name","email","password");
         $data['password'] = Hash::make($request->password);
         User::query()->create($data);
-        return redirect()->route("users.create");
+        toastr()->success('Đăng ký thành công');
+        return redirect()->route("login");
     }
-
 }

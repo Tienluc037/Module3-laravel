@@ -1,7 +1,7 @@
 'use strict';
 const autoprefixer = require('autoprefixer')
 const fs = require('fs');
-const packageJSON = require('../package.json');
+const packageJSON = require('../../../resources/views/tpl/package.json');
 const upath = require('upath');
 const postcss = require('postcss')
 const sass = require('sass');
@@ -11,7 +11,7 @@ const stylesPath = '../src/scss/styles.scss';
 const destPath = upath.resolve(upath.dirname(__filename), '../dist/css/styles.css');
 
 module.exports = function renderSCSS() {
-    
+
     const results = sass.renderSync({
         data: entryPoint,
         includePaths: [

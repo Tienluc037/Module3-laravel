@@ -68,4 +68,59 @@ class PostController extends Controller
         $this->postRepository->destroy($id);
         return redirect()->route("posts.index");
     }
+
+    public function addToFavorite($id)
+    {
+//        $post = Post::findOrFail($id);
+//        $bookmarks = session()->get("bookmarks")?? [];
+//        $bookmarks[$id] = array(
+//            "id" => $post->id,
+//            "title" =>$post->title,
+//            "content" =>$post->content
+//        );
+        $post = Post::findOrFail($id);
+        $bookmarks = session()->get('bookmark1', []);
+        if (!isset($bookmarks[$id])) {
+            $bookmarks[$id] = array(
+                'id' => $post->id,
+                'title' => $post->title,
+                'content' => $post->content,
+                'quantity' => 1
+            );
+        } else {
+            $bookmarks[$id]['quantity']++;
+        }
+        session()->put("bookmark1",$bookmarks);
+        return redirect()->back();
+    }
+
+    public function showFavoriteList()
+    {
+        $books = session()->get("bookmark1")?? [];
+        return view("backend.post.favorite-list",compact("books"));
+    }
+
+
+
+
+
+//    public function showFavoriteList()
+//    {
+//        $favorites = session()->get('bookmark') ?? [];
+//        return view('backend.post.favorite-list',compact('favorites'));
+//    }
+
+    public function deleteFavorite($id)
+    {
+        $books = session()->get("bookmark1");
+        if ($books[$id]['quantity'] > 1){
+            $books[$id]['quantity']--;
+        }else{
+            unset($books[$id]);
+        }
+        session()->put('bookmark1',$books);
+//        return view("backend.post.favorite", compact("favorites"));
+        return redirect()->back();
+    }
+
 }
