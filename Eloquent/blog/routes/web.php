@@ -54,3 +54,5 @@ Route::get('/logout',[AuthController::class,"logout"])->name("logout");
 Route::get('/register',[AuthController::class,"showFormRegister"])->name("register.showFormRegister");
 Route::post('/register',[AuthController::class,"register"])->name("register");
 
+
+

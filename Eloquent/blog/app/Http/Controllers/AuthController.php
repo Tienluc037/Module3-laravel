@@ -22,7 +22,8 @@ class AuthController extends Controller
         if(Auth::attempt($data))
         {
             toastr()->success('Xin chào '. Auth::user()->name);
-            return redirect()->route("posts.index");
+            return view ("frontend.home");
+//            return redirect()->route("posts.index");
         } else {
             dd("Sai tên đăng nhập hoặc mật khẩu");
         }
