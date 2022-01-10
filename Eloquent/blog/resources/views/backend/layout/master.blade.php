@@ -1,83 +1,4 @@
-{{--<!DOCTYPE html>--}}
-{{--<html lang="en">--}}
-{{--<head>--}}
-{{--    <meta charset="utf-8" />--}}
-{{--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />--}}
-{{--    <meta name="description" content="" />--}}
-{{--    <meta name="author" content="" />--}}
-{{--    <title>Full Width Pics - Start Bootstrap Template</title>--}}
-{{--    <!-- Favicon-->--}}
-{{--    <link rel="icon" type="image/x-icon" href="{{asset('assets/dist/assets/favicon.ico')}}" />--}}
-{{--    <!-- Core theme CSS (includes Bootstrap)-->--}}
-{{--    <link href="{{asset('assets/dist/css/styles.css')}}" rel="stylesheet" />--}}
-{{--</head>--}}
-{{--<body>--}}
-{{--<!-- Responsive navbar-->--}}
-{{--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">--}}
-{{--    <div class="container ">--}}
-{{--        <a class="navbar-brand">Welcome to blog!</a>--}}
-{{--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>--}}
-{{--        <div class="collapse navbar-collapse" id="navbarSupportedContent">--}}
-{{--            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">--}}
-{{--                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>--}}
-{{--                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>--}}
-{{--                <li class="nav-item"><a class="nav-link" href="{{route("login")}}">Login</a></li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</nav>--}}
-{{--<!-- Header - set the background image for the header in the line below-->--}}
-{{--<header class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1600x900')">--}}
-{{--    <div class="text-center my-5">--}}
-{{--        <img class="img-fluid rounded-circle mb-4" src="https://dummyimage.com/150x150/6c757d/dee2e6.jpg" alt="..." />--}}
-{{--        <h1 class="text-white fs-3 fw-bolder">Full Width Pics</h1>--}}
-{{--        <p class="text-white-50 mb-0">Landing Page Template</p>--}}
-{{--    </div>--}}
-{{--</header>--}}
-{{--<!-- Content section-->--}}
-{{--<section class="py-5">--}}
-{{--    <div class="container my-5">--}}
-{{--        <div class="row justify-content-center">--}}
-{{--            <div class="col-lg-6">--}}
-{{--                <h2>Full Width Backgrounds</h2>--}}
-{{--                <p class="lead">A single, lightweight helper class allows you to add engaging, full width background images to sections of your page.</p>--}}
-{{--                <p class="mb-0">The universe is almost 14 billion years old, and, wow! Life had no problem starting here on Earth! I think it would be inexcusably egocentric of us to suggest that we're alone in the universe.</p>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
-{{--<!-- Image element - set the background image for the header in the line below-->--}}
-{{--<div class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/4ulffa6qoKA/1200x800')">--}}
-{{--    <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->--}}
-{{--    <div style="height: 20rem"></div>--}}
-{{--</div>--}}
-{{--<!-- Content section-->--}}
-{{--<section class="py-5">--}}
-{{--    <div class="container my-5">--}}
-{{--        <div class="row justify-content-center">--}}
-{{--            <div class="col-lg-6">--}}
-{{--                <h2>Engaging Background Images</h2>--}}
-{{--                <p class="lead">The background images used in this template are sourced from Unsplash and are open source and free to use.</p>--}}
-{{--                <p class="mb-0">I can't tell you how many people say they were turned off from science because of a science teacher that completely sucked out all the inspiration and enthusiasm they had for the course.</p>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
-{{--<!-- Footer-->--}}
-{{--<footer class="py-5 bg-dark">--}}
-{{--    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>--}}
-{{--</footer>--}}
-{{--<!-- Bootstrap core JS-->--}}
-{{--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>--}}
-{{--<!-- Core theme JS-->--}}
-{{--<script src="{{asset('assets/dist/js/scripts.js')}}"></script>--}}
-{{--</body>--}}
-{{--</html>--}}
-
-
-
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -115,7 +36,7 @@
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">Trang chủ</div>
         </a>
 
         <!-- Divider -->
@@ -125,7 +46,7 @@
         <li class="nav-item active">
             <a class="nav-link" href="{{route("posts.create")}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Đăng bài</span></a>
+                <span>Đăng bài</span></a>
         </li>
 
         <!-- Divider -->
@@ -167,19 +88,19 @@
             </div>
         </li>
 
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-       aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Favorite</span>
-    </a>
-    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{route('posts.showFavoriteList')}}">Favorite List</a>
-        </div>
-    </div>
-</li>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Favorite</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{{route('posts.showFavoriteList')}}">Favorite List</a>
+                </div>
+            </div>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -319,7 +240,8 @@
                                 </div>
                                 <div class="font-weight-bold">
                                     <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                        problem I've been having.</div>
+                                        problem I've been having.
+                                    </div>
                                     <div class="small text-gray-500">Emily Fowler · 58m</div>
                                 </div>
                             </a>
@@ -331,7 +253,8 @@
                                 </div>
                                 <div>
                                     <div class="text-truncate">I have the photos that you ordered last month, how
-                                        would you like them sent to you?</div>
+                                        would you like them sent to you?
+                                    </div>
                                     <div class="small text-gray-500">Jae Chun · 1d</div>
                                 </div>
                             </a>
@@ -343,7 +266,8 @@
                                 </div>
                                 <div>
                                     <div class="text-truncate">Last month's report looks great, I am very happy with
-                                        the progress so far, keep up the good work!</div>
+                                        the progress so far, keep up the good work!
+                                    </div>
                                     <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                                 </div>
                             </a>
@@ -355,7 +279,8 @@
                                 </div>
                                 <div>
                                     <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                        told me that people say this to all dogs, even if they aren't good...</div>
+                                        told me that people say this to all dogs, even if they aren't good...
+                                    </div>
                                     <div class="small text-gray-500">Chicken the Dog · 2w</div>
                                 </div>
                             </a>
@@ -369,7 +294,8 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{\Illuminate\Support\Facades\Auth::user()->name ?? ""}}</span>
+                            <span
+                                class="mr-2 d-none d-lg-inline text-gray-600 small">{{\Illuminate\Support\Facades\Auth::user()->name ?? ""}}</span>
                             <img class="img-profile rounded-circle"
                                  src="{{asset('assets/img/undraw_profile.svg')}}">
                         </a>
@@ -384,9 +310,9 @@
                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Settings
                             </a>
-{{--                            <a class="dropdown-item" href="{{ route('posts.showFavoriteList') }}"> Favorite--}}
-{{--                                List( {{ session()->has("bookmark1")? count(session()->get("bookmark1")) : ""}})--}}
-{{--                            </a>--}}
+                            {{--                            <a class="dropdown-item" href="{{ route('posts.showFavoriteList') }}"> Favorite--}}
+                            {{--                                List( {{ session()->has("bookmark1")? count(session()->get("bookmark1")) : ""}})--}}
+                            {{--                            </a>--}}
 
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">

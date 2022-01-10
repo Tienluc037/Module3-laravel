@@ -71,15 +71,9 @@ class PostController extends Controller
 
     public function addToFavorite($id)
     {
-//        $post = Post::findOrFail($id);
-//        $bookmarks = session()->get("bookmarks")?? [];
-//        $bookmarks[$id] = array(
-//            "id" => $post->id,
-//            "title" =>$post->title,
-//            "content" =>$post->content
-//        );
+
         $post = Post::findOrFail($id);
-        $bookmarks = session()->get('bookmark1', []);
+        $bookmarks = $this->session()->get('bookmark1', []);
         if (!isset($bookmarks[$id])) {
             $bookmarks[$id] = array(
                 'id' => $post->id,
@@ -104,11 +98,6 @@ class PostController extends Controller
 
 
 
-//    public function showFavoriteList()
-//    {
-//        $favorites = session()->get('bookmark') ?? [];
-//        return view('backend.post.favorite-list',compact('favorites'));
-//    }
 
     public function deleteFavorite($id)
     {
@@ -121,6 +110,10 @@ class PostController extends Controller
         session()->put('bookmark1',$books);
 //        return view("backend.post.favorite", compact("favorites"));
         return redirect()->back();
+    }
+
+    private function session()
+    {
     }
 
 }

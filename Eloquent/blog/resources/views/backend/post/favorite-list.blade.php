@@ -16,13 +16,13 @@
 <body>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><a> Cần làm</a></h6>
+        <h6 class="m-0 font-weight-bold text-primary"><a style="color: #524b8cd9">Bài viết yêu thích</a></h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
-                <tr>
+                <tr style="color: #524b8cd9">
                     <th>ID</th>
                     <th>Title</th>
                     <th>Content</th>
@@ -39,7 +39,7 @@
                         <td>{{$book['content']}}</td>
                         <td>{{$book['quantity']}}</td>
 
-                        <td><a href="{{route("posts.deleteFavorite",$book["id"])}}">Delete</a></td>
+                        <td><a href="{{route("posts.deleteFavorite",$book["id"])}}" onclick="confirm('Bạn có muốn xóa không?')">Delete</a></td>
                     </tr>
                 @endforeach
                 </tbody>
